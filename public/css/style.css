@@ -1,0 +1,51 @@
+body {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0),
+		rgba(0, 0, 0, 0.1));
+}
+/*Formulario*/
+#form_container {
+	margin-top: 6em;
+}
+#userLogo {
+	width: 115px;
+	opacity: 0.5;
+}
+.form-control, .input-xs, .input-sm, .input-md, .input-lg, .btn {
+	border-radius: 0px;
+}
+/*Iconos*/
+.glyphicon {
+ 	font-size: 1.7em;
+}
+/*.glyphicon-edit, .glyphicon-trash, .glyphicon-plus, .glyphicon-refresh,
+	.glyphicon-paperclip, .glyphicon-search, .glyphicon-stats,
+	.glyphicon-comment {
+	font-size: 1em;
+}*/
+.jumbotron {
+	margin-top: -15px;
+	padding-bottom: 38px;
+	padding-top: 0px;
+	background-color: rgba(255, 255, 255, 0), rgba(66, 59, 48, 0);
+}
+
+.navbar-default {
+	background-color: #FFF;
+	border: 0;
+	padding: 4px 0px 0px 0px; //
+	box-shadow: 0px 0px 35px #BDBDBD;
+}
+.list-group {
+	margin-bottom: 0px;
+	box-shadow: 0px 0px 10px #BDBDBD;
+}
+.panel-config {
+	margin-bottom: 0px;
+	box-shadow: 0px 0px 5px #BDBDBD;
+}
+.color{
+	background-color: #7FFFD4;
+}
+.numeroUts{
+	display: none;
+}

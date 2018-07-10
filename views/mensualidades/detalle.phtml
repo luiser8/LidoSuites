@@ -1,0 +1,50 @@
+
+<ul class="nav nav-tabs nav-justified">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active">
+			   <a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Mensualidad</a></li>
+		   	<li role="presentation">
+				<div class="input-group">
+					<input class="form-control" type="text" id="searchMensualidad" placeholder="Buscar mensualidades">
+				</div></li>
+			<li><div class="input-group">
+			    &nbsp;<a href="?mensualidad=generar" class="btn btn-primary" role="btn" onclick="/*nuevaMensualidad();*/" title="Nueva mensualidad">Nueva mensualidad</a></div>
+	    	</li>					
+		  </ul></ul>
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active">
+			    <?php 
+				if($_GET['mensualidad'] == 'generar'){ ?>
+					<div class="col-md-12">
+					<?php require_once '../views/mensualidades/generar.php'; ?>
+					</div>
+				<?php }else{ ?>
+	    		<table class="table table-striped" id="tablaMensualidad">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Descripción</th>
+		    			<th>Total</th>
+		    			<th>Fecha</th>
+<!-- 		    			<th>Tipo</th> -->
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<?php for($i=0; $i<count($mensualidades); $i++){ $rs = $mensualidades[$i]; ?>
+		    		<tr>
+		    			<td><?php echo $rs['id_mensualidad']; ?></td>
+		    			<td><?php echo $rs['descripcion']; ?></td>
+		    			<td><?php echo $rs['total']; ?></td>
+		    			<td><?php echo $rs['fecha']; ?></td>
+		    			<!-- <td><?php //echo $rs['tipo']; ?></td> -->
+		    			<td>
+		    				<a href="#" onclick="editMensualidad(this);" ><i title="Editar" class="glyphicon glyphicon-edit"></i></a>
+		    				<?php if($rs['tipo'] == 0){ ?>
+		    				<a href="#" onclick="procesarMensualidad(this);" ><i title="Procesar" class="glyphicon glyphicon-share-alt"></i></a>
+		    				<?php } ?>
+		    				<a href="#" onclick="delMensualidad(this);" ><i title="Eliminar" class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr> <?php } ?>
+		    	</table><?php } ?>
+		    </div>
+		  </div>

@@ -1,0 +1,22 @@
+<div class="modal fade" id="nuevaUt">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        title="Cerrar">&times;</button>
+                <h4 class="modal-title">Nueva UT</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formNuevaUt" action="../controllers/ut/addUt.php" method="post">
+                    <div class="form-group">
+                        <input class="form-control" type="number" name="ut" required placeholder="Unidad tributaria" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="anio" required placeholder="Año" autocomplete="off">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Guardar">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

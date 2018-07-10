@@ -1,0 +1,37 @@
+		<ul class="nav nav-tabs nav-justified">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active">
+					<a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Novedades</a></li>
+		   	<li role="presentation">
+				<div class="input-group">
+					<input class="form-control" type="text" id="searchNovedad" placeholder="Buscar novedades">
+				</div></li>
+				<li>					
+						&nbsp;<button type="button" class="btn btn-primary" title="Nueva Novedad" onclick="nuevaNovedad()">Nueva Novedad</button>
+	    	</li>
+		  </ul></ul>
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active" id="detalle">
+			    	
+	    		<table class="table table-striped" id="tablaNovedad">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Usuario</th>
+		    			<th>Descripción</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<?php for($i=0; $i<count($novedades); $i++){ $rs = $novedades[$i]; ?>
+		    		<tr>
+		    			<td><?php echo $rs['id_novedad']; ?></td>
+		    			<td><?php echo $rs['nombre_completo']; ?></td>
+		    			<td><?php echo $rs['descripcion']; ?></td>
+		    			<td>
+		    				<a href="#" onclick="editNovedad(this);" ><i class="glyphicon glyphicon-edit"></i></a>
+		    				<a href="#" onclick="delNovedad(this);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr> <?php } ?>
+		    	</table>
+		    </div>
+		  </div>

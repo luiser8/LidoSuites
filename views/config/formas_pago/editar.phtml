@@ -1,0 +1,22 @@
+<div class="modal fade" id="editFormaPago">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        title="Cerrar">&times;</button>
+                <h4 class="modal-title">Editar Formas de pago</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formEditFormaPago" action="../controllers/formas_pago/editFormaPago.php" method="post">
+                    <div class="form-group">
+                        <input class="form-control" type="hidden" name="id_forma_pago" id="id_forma_pago">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="new_descripcion_forma_pago" id="new_descripcion_forma_pago" placeholder="Descripción" autocomplete="off">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Guardar">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

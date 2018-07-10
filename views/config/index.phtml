@@ -1,0 +1,190 @@
+<span ng-include="'views/usuarios/nuevo.phtml'"></span>
+<span ng-include="'views/usuarios/editar.phtml'"></span>
+
+<span ng-include="'views/config/ut/nuevo.phtml'"></span>
+<span ng-include="'views/config/ut/editar.phtml'"></span>
+
+<span ng-include="'views/config/alicuotas/nuevo.phtml'"></span>
+<span ng-include="'views/config/alicuotas/editar.phtml'"></span>
+
+<span ng-include="'views/config/bancos/nuevo.phtml'"></span>
+<span ng-include="'views/config/bancos/editar.phtml'"></span>
+
+<span ng-include="'views/config/formas_pago/nuevo.phtml'"></span>
+<span ng-include="'views/config/formas_pago/editar.phtml'"></span>
+
+<span ng-include="'views/config/auditoria/editar.phtml'"></span>
+
+<div>
+	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+		<ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+			<li role="presentation" class="active">
+				<a href="">Configuraciones</a>
+			</li>
+			<li role="presentation">
+				<a href="">Usuarios</a>
+			</li>
+			<li role="presentation">
+				<a href="">Unidad tributaria</a>
+			</li>
+			<li role="presentation">
+				<a href="">Alicuotas</a>
+			</li>
+			<li role="presentation">
+				<a href="">Entidades bancarias</a>
+			</li>
+			<li role="presentation">
+				<a href="">Formas de pago</a>
+			</li>
+			<li role="presentation">
+				<a href="">Auditorias</a>
+			</li>  
+		</ul>
+	</div>
+	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+		<ul class="nav nav-tabs nav-justified">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active"><a href="!#usuarios" aria-controls="usuarios" role="tab" data-toggle="tab">Usuarios</a></li>
+		    <li role="presentation"><a href="!#ut" aria-controls="ut" role="tab" data-toggle="tab">UT</a></li>
+		    <li role="presentation"><a href="!#alicuotas" aria-controls=#alicuotas" role="tab" data-toggle="tab">Alicuota</a></li>
+		    <li role="presentation"><a href="!#bancos" aria-controls="bancos" role="tab" data-toggle="tab">Bancos</a></li>
+		    <li role="presentation"><a href="!#formaspagos" aria-controls="formaspagos" role="tab" data-toggle="tab">Formas de pago</a></li>
+		    <li role="presentation"><a href="!#auditoria" aria-controls="auditoria" role="tab" data-toggle="tab">Auditorias</a></li>
+		   	<li role="presentation" class="dropdown"><a href="" class="dropdown-toggle" id="options" data-toggle="dropdown" aria-controls="options-contents" aria-expanded="false">Opciones <span class="caret"></span></a>
+				<ul class="dropdown-menu" aria-labelbody="options" id="options-contents">
+					<li>
+						<a href="" onclick="nuevoUsuario()" title="Crear proyecto">Nuevo usuario</a>						
+						<a href="" onclick="nuevaUt()" title="Crear proyecto">Nuevo ut</a>						
+						<a href="" onclick="nuevaAlicuota()" title="Crear proyecto">Nuevo alicuota</a>						
+						<a href="" onclick="nuevoBanco()" title="Crear proyecto">Nuevo banco</a>						
+						<a href="" onclick="nuevaFormaPago()" title="Crear proyecto">Nuevo forma de pago</a>						
+	    			</li>
+				</ul>
+			</li>
+		  </ul>
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active" id="usuarios" ng-controller="usuariosctrl">
+		    	<table class="table table-striped" id="tablaUsuarios">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Nombre</th>
+		    			<th>Correo</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<tr ng-repeat="usuario in usuarios">
+		    			<td>{{usuario.id_usuario}}</td>
+		    			<td>{{usuario.nombres}}</td>
+		    			<td>{{usuario.correo}}</td>
+		    			<td>
+		    				<a href="" onclick="editUsuario(this);" ><i class="glyphicon glyphicon-edit"></i></a>
+		    				<a href="" ng-click="delUsuario(usuario.id_usuario);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr>
+		    	</table>
+		    </div>
+		    <div role="tabpanel" class="tab-pane" id="ut" ng-controller="utctrl">
+		    	<table class="table table-striped" id="tablaUt">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>UT</th>
+		    			<th>Fecha</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<tr ng-repeat="item in ut">
+		    			<td>{{item.id}}</td>
+		    			<td>{{item.name}}</td>
+		    			<td>{{item.fecha}}</td>
+		    			<td>
+		    				<a href="" onclick="editUt(this);" ><i class="glyphicon glyphicon-edit"></i></a>
+		    				<a href="" onclick="delUt(this);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr>
+		    	</table>
+		    </div>
+		    <div role="tabpanel" class="tab-pane" id="alicuotas" ng-controller="alicuotactrl">
+		    	<table class="table table-striped" id="tablaAlicuota">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Alicuota</th>
+		    			<th>Fecha</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<tr ng-repeat="item in alicuotas">
+		    			<td>{{item.id}}</td>
+		    			<td>{{item.name}}</td>
+		    			<td>{{item.fecha}}</td>
+		    			<td>
+		    				<a href="" onclick="editAlicuota(this);" ><i class="glyphicon glyphicon-edit"></i></a>
+		    				<a href="" onclick="delAlicuota(this);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr>
+		    	</table>
+		    </div>
+		    <div role="tabpanel" class="tab-pane" id="bancos" ng-controller="bancosctrl">
+		    	<table class="table table-striped" id="tablaBancos">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Banco</th>
+		    			<th>Fecha</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<tr ng-repeat="item in bancos">
+		    			<td>{{item.id}}</td>
+		    			<td>{{item.name}}</td>
+		    			<td>{{item.fecha}}</td>
+		    			<td>
+		    				<a href="" onclick="editBanco(this);" ><i class="glyphicon glyphicon-edit"></i></a>
+		    				<a href="" onclick="delBanco(this);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr>
+		    	</table>
+		    </div>
+		    <div role="tabpanel" class="tab-pane" id="formaspagos" ng-controller="formasPagosCtrl">
+		    	<table class="table table-striped" id="tablaFormasPagos">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Forma</th>
+		    			<th>Fecha</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<tr ng-repeat="item in formasPagos">
+		    			<td>{{item.id}}</td>
+		    			<td>{{item.name}}</td>
+		    			<td>{{item.fecha}}</td>
+		    			<td>
+		    				<a href="" onclick="editFormaPago(this);" ><i class="glyphicon glyphicon-edit"></i></a>
+		    				<a href="" onclick="delFormaPago(this);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr>
+		    	</table>
+		    </div>
+		    <div role="tabpanel" class="tab-pane" id="auditoria" ng-controller="auditoriaCtrl">
+		    	<table class="table table-striped" id="tablaAuditoria">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Usuario</th>
+		    			<th>Nivel</th>
+		    			<th>Tabla</th>
+		    			<th>Accion</th>
+		    			<th>Fecha</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<tr ng-repeat="item in auditorias">
+		    			<td>{{item.id}}</td>
+		    			<td>{{item.user}}</td>
+		    			<td>{{item.nivel}}</td>
+		    			<td>{{item.tabla}}</td>
+		    			<td>{{item.accion}}</td>
+		    			<td>{{item.fecha}}</td>
+		    			<td>
+		    				<a href="" onclick="editAuditoria(this);" ><i class="glyphicon glyphicon-edit"></i></a>
+		    				<a href="" onclick="delAuditoria(this);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr>
+		    	</table>
+		    </div>
+		  </div>
+	</div>
+</div>

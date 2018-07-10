@@ -1,0 +1,45 @@
+<div class="modal fade" id="editUsuario">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        title="Cerrar">&times;</button>
+                <h4 class="modal-title">Editar Usuario</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formEditUsuario" action="../controllers/usuarios/editUsuario.php" method="post">
+                    <div class="form-group">
+                        <input class="form-control" type="hidden" name="id_new_usuario" id="id_new_usuario">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="new_nombres" name="new_nombres" placeholder="Nombre" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="new_apellidos" name="new_apellidos" placeholder="Apellido" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="email" id="new_correo" name="new_correo" placeholder="Correo" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" id="new_contrasena" name="new_contrasena" placeholder="Nueva contraseña" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="new_telefono" name="new_telefono" placeholder="Telefono" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <select id="new_nivel" name="new_nivel" class="form-control">
+                            <option value="0">Selecciona un nivel</option>
+                            <option value="1">Administrador del sistema</option>
+                            <option value="2">Administrador del condominio</option>
+                            <option value="3">Propietario</option>
+                        </select>
+<!--                         <input class="form-control" type="text" id="nivel" name="nivel" placeholder="Nivel" autocomplete="off">
+ -->                    </div>
+                    <input class="btn btn-primary" type="submit" value="Guardar">
+                    <button type="button" class="btn btn-primary" value="Cerrar" title="Cerrar" data-dismiss="modal">
+                    Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

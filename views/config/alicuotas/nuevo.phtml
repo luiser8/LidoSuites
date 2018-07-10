@@ -1,0 +1,22 @@
+<div class="modal fade" id="nuevaAlicuota">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        title="Cerrar">&times;</button>
+                <h4 class="modal-title">Nueva Alicuota</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formNuevaAlicuota" action="../controllers/alicuotas/addAlicuota.php" method="post">
+<!--                     <div class="form-group">
+                        <input class="form-control" type="text" name="alicuota" id="alicuota" placeholder="Alicuota" autocomplete="off">
+                    </div> -->
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="montoAlicuota" id="montoAlicuota" placeholder="Monto" autocomplete="off">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Guardar">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

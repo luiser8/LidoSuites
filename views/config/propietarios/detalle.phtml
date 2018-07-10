@@ -1,0 +1,51 @@
+		<ul class="nav nav-tabs nav-justified">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active">
+				<a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Propietarios</a></li>
+		   	<li role="presentation">
+				<div class="input-group">
+					<input class="form-control" type="text" id="searchPropietario" placeholder="Buscar propietarios">
+				</div></li>
+			<li>					
+				&nbsp;<button type="button" class="btn btn-primary" title="Nuevo propietario" onclick="nuevoPropietario()">Nuevo Propietario</button>
+	    	</li>	
+		  </ul></ul>
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active" id="detalle">
+			     <?php 
+				if($_GET['propietarios'] == 'contrato'){ ?>
+					<div class="col-md-12">
+					<?php require_once '../views/config/propietarios/contrato.php'; ?>
+					</div>
+				<?php }else{ ?>
+	    		<table class="table table-striped" id="tablaPropietario">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Cédula</th>
+		    			<th>Nombres</th>
+		    			<th>Apellidos</th>
+		    			<th>Telefono</th>
+		    			<th>Correo</th>
+		    			<th>Notas</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<?php for($i=0; $i<count($propietarios); $i++){ $rs = $propietarios[$i]; ?>
+		    		<tr>
+		    			<td><?php echo $rs['id_propietario']; ?></td>
+		    			<td><?php echo $rs['cedula']; ?></td>
+		    			<td><?php echo $rs['nombres']; ?></td>
+		    			<td><?php echo $rs['apellidos']; ?></td>
+		    			<td><?php echo $rs['telefono']; ?></td>
+		    			<td><?php echo $rs['correo']; ?></td>
+		    			<td><?php echo $rs['notas']; ?></td>
+		    			<td>
+		    				<a href="#" onclick="editPropietario(this);" title="Editar propietario"><i class="glyphicon glyphicon-edit"></i></a>
+		    				<a href="?propietarios=contrato&id=<?php echo $rs['id_usuario']; ?>" title="Generar contrato"><i class="glyphicon glyphicon-pencil"></i></a>
+		    				<a href="#" onclick="delPropietario(this);" title="Eliminar propietario"><i class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr> <?php } ?>
+		    	</table><?php } ?>
+		    </div>
+		  </div>

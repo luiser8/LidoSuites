@@ -1,0 +1,82 @@
+<?php 
+    $formaPago = new FormaPago();
+    $formasPagos = $formaPago->getFormaPago();
+
+    $instanciaBanco = new Banco();
+    $bancos = $instanciaBanco->getBancos();
+
+    $apartamento = new Apartamento();
+    $apartamentos = $apartamento->getApartamentosContrato();
+
+    $mensualidad = new Mensualidad();
+    $mensualidades = $mensualidad->getMensualidadPagada();
+?>
+<div class="modal fade" id="nuevaNotificacion">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        title="Cerrar">&times;</button>
+                <h4 class="modal-title">Nueva notificacion de pago</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formNuevaNotificacion" action="../controllers/notificacion/addNotificacion.php" method="post">
+                    <div class="form-group">
+                        <select name="mensualidad" class="form-control" onchange="getMonto(this);">
+                            <option value="">Selecciona una mensualidad</option>
+                            <?php for($i=0; $i<count($mensualidades); $i++){ $rs = $mensualidades[$i]; ?>
+                                <option value="<?php echo $rs['id_cxc']; ?>">
+                                    <?php echo $rs['descripcion']; ?>        
+                                </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <select name="forma_pago" class="form-control">
+                            <option value="">Selecciona una forma de pago</option>
+                            <?php for($i=0; $i<count($formasPagos); $i++){ $rs = $formasPagos[$i]; ?>
+                                <option value="<?php echo $rs['id_forma_pago']; ?>">
+                                    <?php echo $rs['descripcion']; ?>        
+                                </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                       <select name="apartamento" class="form-control">
+                            <option value="">Selecciona un apartamento</option>
+                            <?php for($i=0; $i<count($apartamentos); $i++){ $rsA = $apartamentos[$i]; ?>
+                                <option value="<?php echo $rsA['id_apartamento']; ?>">
+                                    <?php echo $rsA['nombre']; ?>        
+                                </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                       <select name="banco" class="form-control">
+                            <option value="">Selecciona un banco</option>
+                            <?php for($i=0; $i<count($bancos); $i++){ $rs = $bancos[$i]; ?>
+                                <option value="<?php echo $rs['id_banco']; ?>">
+                                    <?php echo $rs['descripcion']; ?>        
+                                </option>
+                            <?php } ?>
+                        </select>
+                    </div>               
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="monto" id="monto" readonly="off" placeholder="Monto" readonly autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="referencia" required placeholder="Referencia" autocomplete="off">
+                    </div> 
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="descripcion" required placeholder="Descripción" autocomplete="off">
+                    </div> 
+                    <div class="form-group">
+                        <input class="form-control" type="date" name="fecha" required autocomplete="off">
+                    </div>                    
+                    <input class="btn btn-primary" type="submit" value="Guardar">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

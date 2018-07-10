@@ -1,0 +1,38 @@
+		<ul class="nav nav-tabs nav-justified">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active"><a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Documentos</a></li>
+		 	
+		 	<li role="presentation">
+				<div class="input-group">
+					<input class="form-control" type="text" id="searchDoc" placeholder="Buscar documentos">
+				</div></li>  
+				<li>		<?php if($_SESSION['nivel'] == 1 || $_SESSION['nivel'] == 2){ ?>			
+						&nbsp;<button type="button" class="btn btn-primary" title="Nuevo Documento" onclick="nuevoDocumento()">Nuevo Documento</button>
+	    					<?php } ?>
+	    	</li>					
+		  </ul></ul>
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active">
+			    	
+	    		<table class="table table-striped" id="tablaDoc">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Fecha</th>
+		    			<th>Ubicacion</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<?php for($i=0; $i<count($documentos); $i++){ $rs = $documentos[$i]; ?>
+		    		<tr>
+		    			<td><?php echo $rs['id_documento']; ?></td>
+		    			<td><?php echo $rs['fecha']; ?></td>
+		    			<td><?php echo $rs['ubicacion']; ?></td>
+		    			<td>
+		    				<a href="#" onclick="editDocumento(this);" ><i class="glyphicon glyphicon-edit"></i></a>
+		    				<a href="#" onclick="delDocumento(this);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr> <?php } ?>
+		    	</table>
+		    </div>
+		  </div>

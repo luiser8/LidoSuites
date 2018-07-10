@@ -1,0 +1,38 @@
+		<ul class="nav nav-tabs nav-justified">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active"><a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Auditorias</a></li>
+		   
+		   	<li role="presentation">
+				<div class="input-group">
+					<input class="form-control" type="text" id="searchAuditoria" placeholder="Buscar auditorias">
+				</div>
+			</li>
+		  </ul>
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active" id="detalle">
+				<table class="table table-striped" id="tablaAuditoria">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Usuario</th>
+		    			<th>Evento</th>
+		    			<th>Tabla</th>
+		    			<th>Fecha</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<?php for($i=0; $i<count($auditorias); $i++){ $rs = $auditorias[$i]; ?>
+		    		<tr>
+		    			<td><?php echo $rs['id_auditoria']; ?></td>
+		    			<td><?php echo $rs['correo']; ?></td>
+		    			<td><?php echo $rs['evento']; ?></td>
+		    			<td><?php echo $rs['tabla']; ?></td>
+		    			<td><?php echo $rs['created']; ?></td>
+		    			<td>
+		    				<!-- <a href="#" onclick="editBanco(this);" ><i class="glyphicon glyphicon-edit"></i></a> -->
+		    				<a href="#" onclick="delAuditoria(this);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr> <?php } ?>
+		    	</table>
+		    </div>
+		  </div>

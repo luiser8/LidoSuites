@@ -1,0 +1,49 @@
+<?php 
+    $nivel = new Nivel();
+    $niveles = $nivel->getNivel();
+ ?>
+<div class="modal fade" id="nuevoUsuario">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        title="Cerrar">&times;</button>
+                <h4 class="modal-title">Nuevo Usuario</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formNuevoUsuario2" action="../controllers/usuarios/addUsuario.php" method="post">
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="nombres" name="nombres" placeholder="Nombre" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="apellidos" name="apellidos" placeholder="Apellidos" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="correo" name="correo" placeholder="Correo" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" id="contrasena" name="contrasena" placeholder="Contraseña" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="telefono" name="telefono" placeholder="Telefono" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <select name="nivel" class="form-control">
+                            <option value="">Selecciona un nivel</option>
+                            <?php for($i=0; $i<count($niveles); $i++){ $rs = $niveles[$i]; ?>
+                                <option value="<?php echo $rs['id_nivel']; ?>">
+                                    <?php echo $rs['nivel']; ?>        
+                                </option>
+                            <?php } ?>
+                        </select>   
+                    </div>
+
+                    <input class="btn btn-primary" type="submit" value="Guardar">
+                    <button type="button" class="btn btn-primary" value="Cerrar" title="Cerrar" data-dismiss="modal">
+                    Cancelar</button>
+                        
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

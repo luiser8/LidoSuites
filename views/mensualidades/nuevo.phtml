@@ -1,0 +1,28 @@
+<div class="modal fade" id="nuevaMensualidad">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        title="Cerrar">&times;</button>
+                <h4 class="modal-title">Nueva Mensualidad</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formNuevoMensualidad" action="../controllers/mensualidades/addMensualidad.php" method="post">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="descripcion" required placeholder="Descripción" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="total" required placeholder="Total" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="date" name="fecha" required placeholder="Fecha" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="tipo" placeholder="Tipo" autocomplete="off">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Guardar">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

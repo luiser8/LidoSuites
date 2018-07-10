@@ -1,0 +1,73 @@
+<?php 
+    $formaPago = new FormaPago();
+    $formasPagos = $formaPago->getFormaPago();
+    $instanciaBanco = new Banco();
+    $bancos = $instanciaBanco->getBancos();
+    $apartamento = new Apartamento();
+    $apartamentos = $apartamento->getApartamentos();
+?>
+<div class="modal fade" id="editNotificacion">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        title="Cerrar">&times;</button>
+                <h4 class="modal-title">Editar notificacion de pago</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formEditNotificacion" action="../controllers/notificacion/editNotificacion.php" method="post">
+                    <div class="form-group">
+                        <input class="form-control" type="hidden" name="id_new_notificacion_pago" id="id_new_notificacion_pago">
+                    </div>
+                    <div class="form-group">
+                        <select name="forma_pago" class="form-control">
+                            <option value="">Selecciona una forma de pago</option>
+                            <?php for($i=0; $i<count($formasPagos); $i++){ $rs = $formasPagos[$i]; ?>
+                                <option value="<?php echo $rs['id_forma_pago']; ?>">
+                                    <?php echo $rs['descripcion']; ?>        
+                                </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                       <select name="apartamento" class="form-control">
+                            <option value="">Selecciona un apartamento</option>
+                            <?php for($i=0; $i<count($apartamentos); $i++){ $rsA = $apartamentos[$i]; ?>
+                                <option value="<?php echo $rsA['id_apartamento']; ?>">
+                                    <?php echo $rsA['nombre']; ?>        
+                                </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                       <select name="banco" class="form-control">
+                            <option value="">Selecciona un banco</option>
+                            <?php for($i=0; $i<count($bancos); $i++){ $rs = $bancos[$i]; ?>
+                                <option value="<?php echo $rs['id_banco']; ?>">
+                                    <?php echo $rs['descripcion']; ?>        
+                                </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" type="text" onkeyup="subTotalEdit(this);" id="new_monto_notificacion" required placeholder="Monto" autocomplete="off">
+                    </div>                   
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="new_total_notificacion" id="new_total_notificacion" readonly="off" placeholder="Total" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="new_referencia_notificacion" name="new_referencia_notificacion" required placeholder="Referencia" autocomplete="off">
+                    </div> 
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="new_descripcion_notificacion" name="new_descripcion_notificacion" required placeholder="Descripción" autocomplete="off">
+                    </div> 
+                    <div class="form-group">
+                        <input class="form-control" type="date" id="new_fecha_notificacion" name="new_fecha_notificacion" required autocomplete="off">
+                    </div>                    
+                    <input class="btn btn-primary" type="submit" value="Guardar">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

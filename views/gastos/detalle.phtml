@@ -1,0 +1,43 @@
+		<ul class="nav nav-tabs nav-justified">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active">
+				<a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Gastos</a></li>
+		   	<li role="presentation">
+				<div class="input-group">
+					<input class="form-control" type="text" id="searchGastos" placeholder="Buscar gastos">
+				</div></li>
+					<li>
+						&nbsp;<button type="button" class="btn btn-primary" title="Nuevo gasto" onclick="nuevoGasto()">Nuevo Gasto</button>
+    			</li>
+		  </ul></ul>
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active" id="detalleGastos">
+			    	
+	    		<table class="table table-striped" id="tablaGastos">
+		    		<tr>
+							<th>Id</th>
+		    			<th>Descripción</th>
+		    			<th>Monto</th>
+		    			<th>Tipo</th>
+							<th>Número de Ut</th>
+							<th style='display:none;'>Id_Ut</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<?php for($i=0; $i<count($gastos); $i++){ $rs = $gastos[$i]; ?>
+		    		<tr>
+		    			<td><?php echo $rs['id_gasto']; ?></td>
+							<td><?php echo $rs['descripcion']; ?></td>
+		    			<td><?php echo $rs['monto']; ?></td>
+		    			<td><?php echo $rs['tipo']; ?></td>
+							<td><?php echo $rs['numeroUts']; ?></td>
+							<td style='display:none;'><?php echo $rs['id_ut']; ?></td>
+		    			<td>
+		    				<a href="#" onclick="editGasto(this);" ><i class="glyphicon glyphicon-edit"></i></a>
+		    				<a href="#" onclick="delGasto(this);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr> <?php } ?>
+		    	</table>
+		    </div>
+		  </div>

@@ -1,0 +1,59 @@
+		<ul class="nav nav-tabs nav-justified">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active">
+				<a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Notificacion</a></li>
+		   	<li role="presentation">
+				<div class="input-group">
+					<input class="form-control" type="text" id="searchNotificacion" placeholder="Buscar notificacion">
+				</div></li>
+			<li>
+			  &nbsp;<button type="button" class="btn btn-primary" title="Nuevo pago" onclick="nuevaNotificacion()">Nuevo Pago</button></li>
+		  </ul></ul>
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active">
+			    	
+	    		<table class="table table-striped" id="tablaNotificacion">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Forma</th>
+		    			<th>Apartamento</th>
+		    			<th>Banco</th>
+		    			<th>Monto</th>
+		    			<th>Referencia</th>
+		    			<th>Aprobado</th>
+		    			<th>Descripción</th>
+		    			<th>Fecha</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<?php for($i=0; $i<count($notificaciones); $i++){ $rs = $notificaciones[$i]; ?>
+		    		<tr>
+		    			<td><?php echo $rs['id_pago']; ?></td>
+		    			<td><?php echo $rs['forma']; ?></td>
+		    			<td><?php echo $rs['apartamento']; ?></td>
+		    			<td><?php echo $rs['banco']; ?></td>
+		    			<td><?php echo $rs['monto']; ?></td>
+		    			<td><?php echo $rs['referencia']; ?></td>
+		    			<td>
+		    				<?php 
+		    					if($rs['aprobado'] == 0){
+		    						echo "No";
+		    					}else{
+		    						echo "Si";
+		    					}
+		    				 ?>
+		    			</td>
+		    			<td><?php echo $rs['descripcion']; ?></td>
+		    			<td><?php echo $rs['fecha']; ?></td>
+		    			<td>
+		    				<?php if($rs['aprobado'] == 0){?>
+		    					<a href="#" onclick="editNotificacion(this);" title="Editar"><i class="glyphicon glyphicon-edit"></i></a>
+		    				<?php }else if ($rs['aprobado'] == 1){ ?>
+		    				<i class="glyphicon glyphicon-check" title="Aprobado"></i>
+		    				<?php } ?>
+		    			</td>
+		    		</tr> <?php } ?>
+		    	</table>
+		    </div>
+		  </div>

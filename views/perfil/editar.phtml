@@ -1,0 +1,35 @@
+<div class="modal fade" id="editPerfil">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        title="Cerrar">&times;</button>
+                <h4 class="modal-title">Editar Perfil</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formEditPerfil" action="../controllers/usuarios/editPerfil.php" method="post">
+                    <div class="form-group">
+                        <!-- <input class="form-control" type="text" disabled id="id_alicuota"> -->
+                        <input type="hidden" name="id_usuario" id="id_usuario">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="new_nombre" type="text" id="new_nombre" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="new_apellido" type="text" id="new_apellido" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="new_email" type="email" id="new_email" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="new_telefono" type="text" id="new_telefono" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="new_contrasena" type="password" id="new_contrasena" placeholder="Nueva contraseña" autocomplete="off">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Guardar">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

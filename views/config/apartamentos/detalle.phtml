@@ -1,0 +1,49 @@
+		<ul class="nav nav-tabs nav-justified">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active">
+					<a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Apartamentos</a></li>
+		   	<li role="presentation">
+					<div class="input-group">
+						<input class="form-control" type="text" id="searchApartamento" placeholder="Buscar apartamentos">
+					</div></li>
+				<li>					
+						&nbsp;<button type="button" class="btn btn-primary" title="Nuevo apartamento" onclick="nuevoApartamento()">Nuevo Apartamento</button>
+	    	</li>
+		  </ul></ul>
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active" id="detalle">
+				<table class="table table-striped" id="tablaApartamento">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Alicuota</th>
+		    			<th>Nombre</th>
+		    			<th>Saldo</th>
+		    			<th>Estado</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<?php for($i=0; $i<count($apartamentos); $i++){ $rs = $apartamentos[$i]; ?>
+		    		<tr>
+		    			<td><?php echo $rs['id_apartamento']; ?></td>
+		    			<td><?php echo $rs['alicuota']; ?></td>
+		    			<td><?php echo $rs['nombre']; ?></td>
+		    			<td><?php echo $rs['saldo']; ?></td>
+		    			<td>
+		    				<?php 
+		    					if($rs['estado'] == 0){
+		    						echo "Disponible";
+		    					}else{
+		    						echo "Ocupado"; 
+		    					}
+		    				
+		    				?>
+		    			</td>
+		    			<td>
+		    				<a href="#" onclick="editApartamento(this);" ><i class="glyphicon glyphicon-edit"></i></a>
+		    				<a href="#" onclick="delApartamento(this);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr> <?php } ?>
+		    	</table>
+		    </div>
+		  </div>

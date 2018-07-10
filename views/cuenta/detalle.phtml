@@ -1,0 +1,58 @@
+		<ul class="nav nav-tabs nav-justified">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active"><a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Estado de cuenta</a></li>
+		   
+		   <!-- 	<li role="presentation">
+				<div class="input-group input-group-lg">
+					<a href="../controllers/pagos/estadoCuenta" class="btn btn-default btn-lg">Imprimir</a>
+				</div>
+			</li> -->
+
+		  </ul>
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active">
+			    	
+	    		<table class="table table-striped" id="tablaCuenta">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Fecha</th>
+		    			<th>Mes</th>
+		    			<th>Apartamento</th>
+		    			<th>Cargado</th>   			
+		    			<th>Saldo</th>   			
+		    			<th>Estado</th>   			
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<?php for($i=0; $i<count($cxcAll); $i++){ $rs = $cxcAll[$i]; ?>
+		    		<?php if($rs['cancelado'] == 1){ ?>
+		    		<tr class="color">
+		    			<?php } ?>
+		    			<td><?php echo $rs['id_cxc']; ?></td>
+		    			<td><?php echo $rs['fecha']; ?></td>
+		    			<td><?php echo $rs['mes']; ?></td>
+		    			<td><?php echo $rs['apto']; ?><input type="hidden" value="<?php echo $rs['idApto']; ?>"></td>
+		    			<td class="monto"><?php echo "Bs. {$rs['monto']}"; ?></td>
+		    			<td>
+		    				<!-- Bs. <span class="total"></span> -->
+		    				<?php echo "Bs. {$rs['monto']}"; ?>
+		    			</td>
+		    			<td>
+		    				<?php if($rs['cancelado'] != 1){ ?>
+		    					No cancelado
+		    				<?php }else{ ?>
+								Cancelado
+		    				<?php } ?>
+		    			</td>
+		    			<td>
+		    				<?php if($rs['cancelado'] != 1){ ?>
+		    					<a href="#" onclick="pagarMensualidad(this);" title="Realizar pago de la mensualidad"><i class="glyphicon glyphicon-thumbs-up"></i></a>
+		    				<?php }else{ ?>
+								<a target="_blank" href="../controllers/cxc/recibo?cxc=<?php echo $rs['id_cxc']; ?>" title="Imprimir recibo"><i class="glyphicon glyphicon-print"></i></a>
+		    				<?php } ?>
+		    			</td>
+		    		</tr> <?php } ?>	    		
+		    	</table>
+		    </div>
+		  </div><td></td>

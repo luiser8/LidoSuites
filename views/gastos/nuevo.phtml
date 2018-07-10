@@ -1,0 +1,47 @@
+<?php
+    $ut = new Ut();
+    $uts = $ut->getUt();
+?>
+<div class="modal fade" id="nuevoGasto">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        title="Cerrar">&times;</button>
+                <h4 class="modal-title">Nuevo gasto</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formNuevoPro" action="../controllers/gastos/addGasto.php" method="post">
+                    <div class="form-group">
+                        <select name="tipo" id="tipoGasto" class="form-control">
+                            <option value="">Selecciona un tipo</option>
+                            <option value="1">Ordinario</option>
+                            <option value="2">Alquiler</option>
+                            <option value="3">Multa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="id_ut" id="id_utGasto" class="form-control">
+                            <option value="">Selecciona una unidad tributaria</option>
+                            <?php for($i=0; $i<count($uts); $i++){ $rs = $uts[$i]; ?>
+                                <option value="<?php echo $rs['id_ut']; ?>">
+                                    <?php echo $rs['ut']; ?>
+                                </option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control numeroUts" type="number" name="numeroUts" id="numeroUts" placeholder="Número de UT's" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="descripcion" required placeholder="Descripción" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="monto" id="montoGasto" readonly="on" required placeholder="Monto" autocomplete="off">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Guardar">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

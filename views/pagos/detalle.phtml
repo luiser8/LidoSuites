@@ -1,0 +1,61 @@
+		<ul class="nav nav-tabs nav-justified">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active"><a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Pagos</a></li>
+		   
+		   	<li role="presentation">
+				<div class="input-group">
+					<input class="form-control" type="text" id="searchFactura" placeholder="Buscar pagos">
+				</div>
+			</li>
+		  </ul>
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active">
+	    		<table class="table table-striped display" id="tablaPagos">
+		    		<tr>
+		    			<th>Id</th>
+		    			<!-- <th>Forma</th> -->
+		    			<th>Apartamento</th>
+		    			<th>Banco</th>
+		    			<th>Propietario</th>
+		    			<th>Monto</th>
+		    			<th>Referencia</th>
+		    			<th>Aprobado</th>
+		    			<th>Descripción</th>
+		    			<th>Fecha</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<?php for($i=0; $i<count($pagos); $i++){ $rs = $pagos[$i]; ?>
+		    		<tr>
+		    			<td><?php echo $rs['id_pago']; ?></td>
+		    			<!-- <td><?php /*echo $rs['forma']; */?></td> -->
+		    			<td><?php echo $rs['apartamento']; ?></td>
+		    			<td><?php echo $rs['banco']; ?></td>
+		    			<td><?php echo $rs['correo']; ?></td>
+		    			<td><?php echo "Bs. {$rs['monto']}"; ?></td>
+		    			<td><?php echo $rs['referencia']; ?></td>
+		    			<td>
+		    				<?php 
+		    					if($rs['aprobado'] == 0){
+		    						echo "No";
+		    					}else{
+		    						echo "Si";
+		    					}
+		    				 ?>
+		    			</td>
+		    			<td><?php echo $rs['descripcion']; ?></td>
+		    			<td><?php echo $rs['fecha']; ?></td>
+		    			<td>
+		    				<?php if($rs['aprobado'] == 0){?>
+		    					<!-- <a href="#" onclick="editNotificacion(this);" ><i class="glyphicon glyphicon-edit"></i></a> -->
+		    					<a href="#" onclick="aprobarPago(this);" title="Aprobar"><i class="glyphicon glyphicon-ok"></i></a>
+		    				<?php }else{ ?>
+		    					<a target="_blank" href="../controllers/pagos/recibo?pago=<?php echo $rs['id_pago']; ?>" title="Aprobado! Imprimir recibo"><i class="glyphicon glyphicon-print"></i></a>
+		    				<!-- <a href="#" onclick="delNotificacion(this);" ><i class="glyphicon glyphicon-trash"></i></a> -->
+		    				<?php } ?>
+		    			</td>
+		    		</tr> <?php } ?>
+		    	</table>
+		    </div>
+		  </div>

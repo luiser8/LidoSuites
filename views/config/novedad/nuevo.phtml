@@ -1,0 +1,23 @@
+<?php 
+    //$instanciaUsuario = new Usuario();
+    //$usuarios = $instanciaUsuario->getUsuarios();
+ ?>
+<div class="modal fade" id="nuevaNovedad">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        title="Cerrar">&times;</button>
+                <h4 class="modal-title">Nueva novedad</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formNuevaNovedad" action="../controllers/novedad/addNovedad.php" method="post">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="descripcion_novedad" id="descripcion_novedad" placeholder="Descripción" autocomplete="off">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Guardar">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

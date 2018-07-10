@@ -1,0 +1,45 @@
+		<ul class="nav nav-tabs nav-justified">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active">
+					<a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Proveedores</a></li>	   	
+		   	<li role="presentation">
+				<div class="input-group">
+					<input class="form-control" type="text" id="searchProveedor" placeholder="Buscar proveedor">
+				</div></li>
+		   	<!--<li role="presentation" class="dropdown"><a href="" class="dropdown-toggle" id="options" data-toggle="dropdown" aria-controls="options-contents" aria-expanded="false">Opciones <span class="caret"></span></a>
+				<ul class="dropdown-menu" aria-labelbody="options" id="options-contents">-->
+				<li>
+						&nbsp;<button type="button" class="btn btn-primary" title="Nuevo proveedor" onclick="nuevoProveedor()">Nuevo Proveedor</button>
+	    	</li>
+		  </ul></ul>
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active" id="detalle">
+			    	
+	    		<table class="table table-striped" id="tablaProveedor">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Nombres</th>
+		    			<th>Apellidos</th>
+		    			<th>Correo</th>
+		    			<th>Telefono</th>
+		    			<th>Notas</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<?php for($i=0; $i<count($proveedores); $i++){ $rs = $proveedores[$i]; ?>
+		    		<tr>
+		    			<td><?php echo $rs['id_proveedor']; ?></td>
+		    			<td><?php echo $rs['nombres']; ?></td>
+		    			<td><?php echo $rs['apellidos']; ?></td>
+		    			<td><?php echo $rs['correo']; ?></td>
+		    			<td><?php echo $rs['telefono']; ?></td>
+		    			<td><?php echo $rs['notas']; ?></td>
+		    			<td>
+		    				<a href="#" onclick="editProveedor(this);" ><i class="glyphicon glyphicon-edit"></i></a>
+		    				<a href="#" onclick="delProveedor(this);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr> <?php } ?>
+		    	</table>
+		    </div>
+		  </div>

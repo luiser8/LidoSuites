@@ -1,0 +1,37 @@
+<div class="modal fade" id="editPropietario">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        title="Cerrar">&times;</button>
+                <h4 class="modal-title">Editar Propietario</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formEditPropietario" action="../controllers/propietarios/editPropietario.php" method="post">
+                    <div class="form-group">
+                        <input class="form-control" type="hidden" name="id_new_propietario" id="id_new_propietario">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" required name="new_cedula_propietario" id="new_cedula_propietario" placeholder="Cédula" autocomplete="off">
+                    </div>
+                     <div class="form-group">
+                        <input class="form-control" type="text" required name="new_nombres_propietario" id="new_nombres_propietario" placeholder="Nombres" autocomplete="off">
+                    </div>                      
+                     <div class="form-group">
+                        <input class="form-control" type="text" required name="new_apellidos_propietario" id="new_apellidos_propietario" placeholder="Apellidos" autocomplete="off">
+                    </div>  
+                     <div class="form-group">
+                        <input class="form-control" type="text" required name="new_telefono_propietario" id="new_telefono_propietario" placeholder="Telefono" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="email" required name="new_correo_propietario" id="new_correo_propietario" placeholder="Correo" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" required name="new_notas_propietario" id="new_notas_propietario" placeholder="Notas" autocomplete="off">
+                    </div>      
+                    <input class="btn btn-primary" type="submit" value="Guardar">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

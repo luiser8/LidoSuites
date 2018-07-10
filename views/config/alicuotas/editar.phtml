@@ -1,0 +1,26 @@
+<div class="modal fade" id="editAlicuota">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"
+                        title="Cerrar">&times;</button>
+                <h4 class="modal-title">Editar Alicuota</h4>
+            </div>
+            <div class="modal-body">
+                <form id="formEditAlicuota" action="../controllers/alicuotas/editAlicuota.php" method="post">
+                    <div class="form-group">
+                        <!-- <input class="form-control" type="text" disabled id="id_alicuota"> -->
+                        <input type="hidden" name="alicuota" id="id_alicuota">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="new_alicuota" type="text" id="new_alicuota" placeholder="Alicuota" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="new_monto" type="text" id="new_monto" placeholder="Monto" autocomplete="off">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Guardar">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
