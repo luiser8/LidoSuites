@@ -91,70 +91,70 @@
 			</li>
 			<!-- Nivel administrador del sistema -->
 			<?php if($_SESSION['nivel'] == 1){ ?>
-			<li role="presentation">
+			<li role="presentation" <?php if(isset($_GET['usuarios'])){echo "style='background-color:#eee;'";} ?>>
 				<a href="./?usuarios">Gestionar cuentas de usuarios</a>
 			</li>	
 			<?php } ?>	
 			
 			<!-- Nivel administrador del condominio -->
 			<?php if($_SESSION['nivel'] == 2){ ?>
-			<li role="presentation">
+			<li role="presentation" <?php if(isset($_GET['mensualidad'])){echo "style='background-color:#eee;'";} ?>>
 				<a href="./?mensualidad">Gestionar mensualidades</a>
 			</li>	
 			<?php } ?>
 
 			<?php if($_SESSION['nivel'] == 2){ ?>
-			<li role="presentation">
+			<li role="presentation" <?php if(isset($_GET['gastos'])){echo "style='background-color:#eee;'";} ?>>
 				<a href="./?gastos">Gestionar gastos</a>
 			</li>	
 			<?php } ?>		
 
 			<?php if($_SESSION['nivel'] == 2){ ?>
-			<li role="presentation">
+			<li role="presentation" <?php if(isset($_GET['pagos'])){echo "style='background-color:#eee;'";} ?>>
 				<a href="./?pagos">Gestionar pagos</a>
 			</li>	
 			<?php } ?>	
 
 			<?php if($_SESSION['nivel'] == 2){ ?>
-			<li role="presentation">
+			<li role="presentation" <?php if(isset($_GET['propietarios'])){echo "style='background-color:#eee;'";} ?>>
 				<a href="./?propietarios">Gestionar directorios de propietarios</a>
 			</li>	
 			<?php } ?>	
 
 			<?php if($_SESSION['nivel'] == 2){ ?>
-			<li role="presentation">
+			<li role="presentation" <?php if(isset($_GET['proveedores'])){echo "style='background-color:#eee;'";} ?>>
 				<a href="./?proveedores">Gestionar directorio de proveedores</a>
 			</li>	
 			<?php } ?>	
 
 			<?php if($_SESSION['nivel'] == 2 || $_SESSION['nivel'] == 3){ ?>
-			<li role="presentation">
+			<li role="presentation" <?php if(isset($_GET['novedades'])){echo "style='background-color:#eee;'";} ?>>
 				<a href="./?novedades">Gestionar registro de novedades</a>
 			</li>	
 			<?php } ?>
 
 			<?php if($_SESSION['nivel'] == 2 || $_SESSION['nivel'] == 3){ ?>
-			<li role="presentation">
+			<li role="presentation" <?php if(isset($_GET['documentos'])){echo "style='background-color:#eee;'";} ?>>
 				<a href="./?documentos">Gestionar repertorio de documentos</a>
 			</li>	
 			<?php } ?>
 
 			<!-- Nivel administrador del sistema -->
 			<?php if($_SESSION['nivel'] == 1){ ?>
-			<li role="presentation">
+			<li role="presentation" <?php if(isset($_GET['auditoria'])){echo "style='background-color:#eee;'";} ?>>
 				<a href="./?auditoria">Visualizar historial del sistema</a>
 			</li>	
 			<?php } ?>	
 			
 			<!-- Nivel propietario -->
 			<?php if($_SESSION['nivel'] == 3){ ?>
-			<li role="presentation">
+			<li role="presentation" <?php if(isset($_GET['cuenta'])){echo "style='background-color:#eee;'";} ?>>
 				<a href="./?cuenta">Visualizar estado de cuenta</a>
 			</li>	
 			<?php } ?>
 
 			<?php if($_SESSION['nivel'] == 3){ ?>
-			<li role="presentation">
+			<li role="presentation" <?php if(isset($_GET['notificacion'])){echo "style='background-color:#eee;'";} ?>>
 				<a href="./?notificacion">Emitir notificación de pagos</a>
 			</li>	
 			<?php } ?>	
@@ -166,19 +166,19 @@
 			</li>
 				<div id="collapse1" class="collapse">
 					<ul class="nav nav-pills nav-stacked nav-pills-stacked-example panel-config">
-						<li role="presentation">
+						<li role="presentation" <?php if(isset($_GET['alicuotas'])){echo "style='background-color:#eee;'";} ?>>
 							<a href="./?alicuotas">Alicuotas</a>
 						</li>
-						<li role="presentation">
+						<li role="presentation" <?php if(isset($_GET['apartamentos'])){echo "style='background-color:#eee;'";} ?>>
 							<a href="./?apartamentos">Apartamentos</a>
 						</li>
-						<li role="presentation">
+						<li role="presentation" <?php if(isset($_GET['bancos'])){echo "style='background-color:#eee;'";} ?>>
 							<a href="./?bancos">Entidades bancarias</a>
 						</li>
-						<li role="presentation">
+						<li role="presentation" <?php if(isset($_GET['formas'])){echo "style='background-color:#eee;'";} ?>>
 							<a href="./?formas">Formas de pago</a>
 						</li>
-						<li class="presentation">
+						<li class="presentation" <?php if(isset($_GET['ut'])){echo "style='background-color:#eee;'";} ?>>
 							<a href="./?ut">Unidad tributaria</a>
 						</li>
 					</ul>

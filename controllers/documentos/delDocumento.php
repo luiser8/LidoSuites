@@ -1,12 +1,11 @@
-<?php 
-
+<?php
 require_once '../../controllers/usuarios/check.php';
-require_once '../../models/apartamento.php';
+require_once '../../models/documento.php';
 require_once '../../models/auditoria.php';
 
-$apartamento = new Apartamento();
+$instanciaDoc = new Documento();
 $auditoria = new Auditoria();
-$apartamento->delApartamento($_GET['id']);
+$instanciaDoc->delDocumento($_GET['id'], $_GET['name']);
 
-$auditoria->addAuditoria($_SESSION['idusuario'], 'Eliminar un apartamento', 'apartamentos');
-header('Location: ../../pages/?apartamentos');
+$auditoria->addAuditoria($_SESSION['idusuario'], 'Eliminar un documento', 'documentos');
+header('Location: ../../pages/?documentos');

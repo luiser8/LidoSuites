@@ -7,14 +7,16 @@
                 <h4 class="modal-title">Nuevo documento</h4>
             </div>
             <div class="modal-body">
-                <form id="formNuevoDocumento" action="../controllers/documentos/addDocumento.php" method="post">
+                <form id="formNuevoDocumento" action="../controllers/documentos/addDocumento.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <input class="form-control" type="date" name="fecha" required placeholder="Fecha" autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="ubicacion" required placeholder="Ubicacion" autocomplete="off">
+                        <input class="form-control" type="file" name="archivo" required autocomplete="off">
                     </div>
-                
+                     <div class="form-group">
+                        <input class="form-control" type="text" name="descripcion" required placeholder="Descripción" autocomplete="off">
+                    </div>
                     <input class="btn btn-primary" type="submit" value="Guardar">
                 </form>
             </div>

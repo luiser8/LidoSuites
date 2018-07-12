@@ -21,16 +21,15 @@ function editDocumento(index) {
 }
 
 //Elimina el registro
-function delDocumento(index) {
-    var tabla = document.getElementById('tablaAlicuota');
+function delDocumento(index, nombre) {
+    var tabla = document.getElementById('tablaDoc');
     var tr = index.parentNode.parentNode.rowIndex;
     //Nodos tabla
     var id = index.parentNode.parentNode.cells[0].textContent;
 
-   
-    var confirmacion = confirm(`Seguro eliminar la alicouta ${id}`);
+    var confirmacion = confirm(`Seguro eliminar el documento ${nombre}`);
         if(confirmacion){
-            window.location = "../controllers/alicuotas/delAlicuota?id="+id;
-             tabla.deleteRow(tr);
+            window.location = "../controllers/documentos/delDocumento?id="+id+"&name="+nombre;
+             //tabla.deleteRow(tr);
         }
 }

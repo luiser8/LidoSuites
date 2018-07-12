@@ -11,9 +11,9 @@ class Documento{
 	}
 
 	//Metodos CRUD
-	public function addDocumento($fecha, $ubicacion){
-        $sql = "INSERT INTO documentos(id_documento, fecha, ubicacion)VALUES(
-            NULL, '{$fecha}', '{$ubicacion}')";
+	public function addDocumento($id_usuario, $fecha, $ubicacion, $descripcion){
+        $sql = "INSERT INTO documentos(id_documento, id_usuario, fecha, ubicacion, descripcion)VALUES(
+            NULL, '{$id_usuario}', '{$fecha}', '{$ubicacion}', '{$descripcion}')";
             return $this->db->query($sql);
     }
 
@@ -38,8 +38,9 @@ class Documento{
                   WHERE id_documento='{$id_documento}'";
         return $this->db->query($sql);
     }
-    public function delDocumento($id_documento){
+    public function delDocumento($id_documento, $nombre){
         $sql = "DELETE FROM documentos WHERE id_documento={$id_documento}";
+        unlink('../../public/docs/' . $nombre);
         return $this->db->query($sql);
     }
 }

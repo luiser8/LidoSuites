@@ -20,17 +20,19 @@
 		    		<tr>
 		    			<th>Id</th>
 		    			<th>Fecha</th>
-		    			<th>Ubicacion</th>
+		    			<th>Descripción / Descarga</th>
 		    			<th>Opciones</th>
 		    		</tr>
 		    		<?php for($i=0; $i<count($documentos); $i++){ $rs = $documentos[$i]; ?>
 		    		<tr>
 		    			<td><?php echo $rs['id_documento']; ?></td>
 		    			<td><?php echo $rs['fecha']; ?></td>
-		    			<td><?php echo $rs['ubicacion']; ?></td>
+		    			<td><a href="../public/docs/<?php echo $rs['ubicacion']; ?>" target="_blank"><?php echo $rs['descripcion']; ?></a></td>
 		    			<td>
+		    				<?php if($_SESSION['idusuario'] == $rs['id_usuario']){ ?>
 		    				<a href="#" onclick="editDocumento(this);" ><i class="glyphicon glyphicon-edit"></i></a>
-		    				<a href="#" onclick="delDocumento(this);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    				<a href="#" onclick="delDocumento(this, '<?php echo $rs['ubicacion']; ?>');" ><i class="glyphicon glyphicon-trash"></i></a>
+		    				<?php } ?>
 		    			</td>
 		    		</tr> <?php } ?>
 		    	</table>
