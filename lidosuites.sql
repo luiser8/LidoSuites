@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 12, 2018 at 05:55 PM
+-- Generation Time: Jul 12, 2018 at 08:40 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.1.19
 
@@ -112,7 +112,12 @@ INSERT INTO `auditorias` (`id_auditoria`, `id_usuario`, `evento`, `tabla`, `crea
 (25, 2, 'Eliminar un documento', 'documentos', '2018-07-12 15:35:12'),
 (26, 2, 'Agregar un apartamento', 'apartamentos', '2018-07-12 15:36:30'),
 (27, 2, 'Agregar un apartamento', 'apartamentos', '2018-07-12 15:41:06'),
-(28, 2, 'Agregar un apartamento', 'apartamentos', '2018-07-12 15:51:29');
+(28, 2, 'Agregar un apartamento', 'apartamentos', '2018-07-12 15:51:29'),
+(29, 2, 'Agregar un apartamento', 'apartamentos', '2018-07-12 18:24:02'),
+(30, 2, 'Editar un documento', 'documentos', '2018-07-12 18:27:44'),
+(31, 2, 'Editar un documento', 'documentos', '2018-07-12 18:28:57'),
+(32, 2, 'Editar un documento', 'documentos', '2018-07-12 18:30:35'),
+(33, 2, 'Editar un documento', 'documentos', '2018-07-12 18:32:25');
 
 -- --------------------------------------------------------
 
@@ -257,7 +262,8 @@ CREATE TABLE `documentos` (
 --
 
 INSERT INTO `documentos` (`id_documento`, `id_usuario`, `fecha`, `ubicacion`, `descripcion`, `created`) VALUES
-(1, 2, '2018-07-12', '2017-Scrum-Guide-Spanish-SouthAmerican.pdf', 'Scrum Guia 2017', '2018-07-12 15:51:29');
+(1, 2, '2018-07-12', '2017-Scrum-Guide-Spanish-SouthAmerican.pdf', 'Scrum Guia 2017', '2018-07-12 15:51:29'),
+(2, 2, '2018-07-12', 'curso.txt', 'curso txt', '2018-07-12 18:24:02');
 
 -- --------------------------------------------------------
 
@@ -635,7 +641,7 @@ ALTER TABLE `apartamentos`
 -- AUTO_INCREMENT for table `auditorias`
 --
 ALTER TABLE `auditorias`
-  MODIFY `id_auditoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_auditoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `bancos`
@@ -677,7 +683,7 @@ ALTER TABLE `detalle_mensualidad`
 -- AUTO_INCREMENT for table `documentos`
 --
 ALTER TABLE `documentos`
-  MODIFY `id_documento` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_documento` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `formas_pagos`

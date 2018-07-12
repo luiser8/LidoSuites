@@ -20,7 +20,11 @@
 					<div class="col-md-12">
 					<?php require_once '../views/mensualidades/generar.php'; ?>
 					</div>
-				<?php }else{ ?>
+				<?php }else if($_GET['mensualidad'] == 'editar'){ ?>
+					<div class="col-md-12">
+					<?php require_once '../views/mensualidades/editar.php'; ?>
+					</div>
+				<?php }else{?>
 	    		<table class="table table-striped" id="tablaMensualidad">
 		    		<tr>
 		    			<th>Id</th>
@@ -38,7 +42,10 @@
 		    			<td><?php echo $rs['fecha']; ?></td>
 		    			<!-- <td><?php //echo $rs['tipo']; ?></td> -->
 		    			<td>
-		    				<a href="#" onclick="editMensualidad(this);" ><i title="Editar" class="glyphicon glyphicon-edit"></i></a>
+		    				<?php if($rs['tipo'] == 0){ ?>
+		    				<a href="?mensualidad=editar&id=<?php echo $rs['id_mensualidad']; ?>"><i title="Editar" class="glyphicon glyphicon-edit"></i></a>
+		    				<!-- onclick="editMensualidad(this);" -->
+		    				<?php } ?>
 		    				<?php if($rs['tipo'] == 0){ ?>
 		    				<a href="#" onclick="procesarMensualidad(this);" ><i title="Procesar" class="glyphicon glyphicon-share-alt"></i></a>
 		    				<?php } ?>
