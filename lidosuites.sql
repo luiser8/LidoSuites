@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 12, 2018 at 02:09 PM
--- Server version: 10.1.33-MariaDB
--- PHP Version: 7.1.18
+-- Generation Time: Jul 12, 2018 at 05:55 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.1.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,10 +40,8 @@ CREATE TABLE `alicuotas` (
 --
 
 INSERT INTO `alicuotas` (`id_alicuota`, `alicuota`, `monto`, `created`) VALUES
-(1, '2%', '2', '2018-06-26 06:52:06'),
 (2, '3%', '3', '2018-06-26 06:52:09'),
-(3, '4%', '4', '2018-06-26 06:52:12'),
-(4, '5%', '5', '2018-06-26 06:59:31');
+(3, '4%', '4', '2018-06-26 06:52:12');
 
 -- --------------------------------------------------------
 
@@ -65,11 +63,8 @@ CREATE TABLE `apartamentos` (
 --
 
 INSERT INTO `apartamentos` (`id_apartamento`, `id_alicuota`, `nombre`, `saldo`, `estado`, `created`) VALUES
-(1, 1, 'Apartamento Nro 1', '100.00', 1, '2018-06-26 06:52:33'),
-(2, 1, 'Apartamento Nro 2', '100.00', 1, '2018-06-26 06:52:48'),
 (3, 2, 'Apartamento Nro 3', '100.00', 0, '2018-06-26 06:53:04'),
-(4, 3, 'Apartamento Nro 4', '100.00', 0, '2018-06-26 06:53:15'),
-(5, 4, 'Apartamento Nro 5', '100.00', 0, '2018-06-26 06:59:51');
+(4, 3, 'Apartamento Nro 4', '100.00', 0, '2018-06-26 06:53:15');
 
 -- --------------------------------------------------------
 
@@ -96,7 +91,28 @@ INSERT INTO `auditorias` (`id_auditoria`, `id_usuario`, `evento`, `tabla`, `crea
 (4, 2, 'Agregar una cuenta por co', 'cxc', '2018-07-10 19:00:42'),
 (5, 2, 'Agregar una cuenta por co', 'cxc', '2018-07-10 19:00:43'),
 (6, 2, 'Agregar una cuenta por co', 'cxc', '2018-07-10 19:00:43'),
-(7, 2, 'Agregar una cuenta por co', 'cxc', '2018-07-10 19:00:43');
+(7, 2, 'Agregar una cuenta por co', 'cxc', '2018-07-10 19:00:43'),
+(8, 5, 'Agregar una novedad', 'novedades', '2018-07-12 13:09:08'),
+(9, 2, 'Agregar una novedad', 'novedades', '2018-07-12 14:13:58'),
+(10, 2, 'Agregar un apartamento', 'apartamentos', '2018-07-12 15:03:20'),
+(11, 2, 'Eliminar una alicuota', 'alicuotas', '2018-07-12 15:07:00'),
+(12, 2, 'Eliminar una alicuota', 'alicuotas', '2018-07-12 15:07:17'),
+(13, 2, 'Agregar un apartamento', 'apartamentos', '2018-07-12 15:07:29'),
+(14, 2, 'Agregar un apartamento', 'apartamentos', '2018-07-12 15:19:29'),
+(15, 2, 'Agregar un apartamento', 'apartamentos', '2018-07-12 15:20:01'),
+(16, 2, 'Eliminar una alicuota', 'alicuotas', '2018-07-12 15:25:58'),
+(17, 2, 'Eliminar una alicuota', 'alicuotas', '2018-07-12 15:26:26'),
+(18, 2, 'Eliminar una alicuota', 'alicuotas', '2018-07-12 15:27:44'),
+(19, 2, 'Eliminar un documento', 'documentos', '2018-07-12 15:27:58'),
+(20, 2, 'Eliminar un documento', 'documentos', '2018-07-12 15:28:01'),
+(21, 2, 'Eliminar un documento', 'documentos', '2018-07-12 15:28:25'),
+(22, 2, 'Agregar un apartamento', 'apartamentos', '2018-07-12 15:31:31'),
+(23, 2, 'Eliminar un documento', 'documentos', '2018-07-12 15:34:32'),
+(24, 2, 'Agregar un apartamento', 'apartamentos', '2018-07-12 15:35:01'),
+(25, 2, 'Eliminar un documento', 'documentos', '2018-07-12 15:35:12'),
+(26, 2, 'Agregar un apartamento', 'apartamentos', '2018-07-12 15:36:30'),
+(27, 2, 'Agregar un apartamento', 'apartamentos', '2018-07-12 15:41:06'),
+(28, 2, 'Agregar un apartamento', 'apartamentos', '2018-07-12 15:51:29');
 
 -- --------------------------------------------------------
 
@@ -143,14 +159,6 @@ CREATE TABLE `contrato` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
---
--- Dumping data for table `contrato`
---
-
-INSERT INTO `contrato` (`id_contrato`, `id_apartamento`, `id_propietario`, `fecha_inicio`, `fecha_fin`, `created`) VALUES
-(1, 1, 5, '2018-06-01', '2018-06-30', '2018-06-26 07:10:51'),
-(3, 2, 6, '2018-06-04', '2018-06-30', '2018-06-26 07:36:16');
-
 -- --------------------------------------------------------
 
 --
@@ -173,11 +181,8 @@ CREATE TABLE `cxc` (
 --
 
 INSERT INTO `cxc` (`id_cxc`, `id_apartamento`, `id_alicuota`, `id_mensualidad`, `monto`, `cancelado`, `fecha`, `created`) VALUES
-(1, 1, 1, 1, '61200000.00', 0, '2018-07-10', '2018-07-10 19:00:42'),
-(2, 2, 1, 1, '61200000.00', 0, '2018-07-10', '2018-07-10 19:00:42'),
 (3, 3, 2, 1, '61800000.00', 0, '2018-07-10', '2018-07-10 19:00:43'),
-(4, 4, 3, 1, '62400000.00', 0, '2018-07-10', '2018-07-10 19:00:43'),
-(5, 5, 4, 1, '63000000.00', 0, '2018-07-10', '2018-07-10 19:00:43');
+(4, 4, 3, 1, '62400000.00', 0, '2018-07-10', '2018-07-10 19:00:43');
 
 -- --------------------------------------------------------
 
@@ -240,10 +245,19 @@ INSERT INTO `detalle_mensualidad` (`id_detalle_mensualidad`, `id_mensualidad`, `
 
 CREATE TABLE `documentos` (
   `id_documento` int(10) UNSIGNED NOT NULL,
+  `id_usuario` int(10) UNSIGNED NOT NULL,
   `fecha` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
   `ubicacion` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `descripcion` varchar(115) COLLATE utf8_spanish_ci NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Dumping data for table `documentos`
+--
+
+INSERT INTO `documentos` (`id_documento`, `id_usuario`, `fecha`, `ubicacion`, `descripcion`, `created`) VALUES
+(1, 2, '2018-07-12', '2017-Scrum-Guide-Spanish-SouthAmerican.pdf', 'Scrum Guia 2017', '2018-07-12 15:51:29');
 
 -- --------------------------------------------------------
 
@@ -348,6 +362,14 @@ CREATE TABLE `novedades` (
   `descripcion` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Dumping data for table `novedades`
+--
+
+INSERT INTO `novedades` (`id_novedad`, `id_usuario`, `descripcion`, `created`) VALUES
+(1, 5, 'Nueva novedad', '2018-07-12 13:09:08'),
+(2, 2, 'Novedad ok', '2018-07-12 14:13:58');
 
 -- --------------------------------------------------------
 
@@ -613,7 +635,7 @@ ALTER TABLE `apartamentos`
 -- AUTO_INCREMENT for table `auditorias`
 --
 ALTER TABLE `auditorias`
-  MODIFY `id_auditoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_auditoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `bancos`
@@ -655,7 +677,7 @@ ALTER TABLE `detalle_mensualidad`
 -- AUTO_INCREMENT for table `documentos`
 --
 ALTER TABLE `documentos`
-  MODIFY `id_documento` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_documento` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `formas_pagos`
@@ -685,7 +707,7 @@ ALTER TABLE `niveles`
 -- AUTO_INCREMENT for table `novedades`
 --
 ALTER TABLE `novedades`
-  MODIFY `id_novedad` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_novedad` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pagos`
