@@ -7,7 +7,7 @@
                 <h4 class="modal-title">Editar Documentos</h4>
             </div>
             <div class="modal-body">
-                <form id="formEditDocumentos" action="../controllers/documentos/editDocumento.php" method="post">
+                <form id="formEditDocumentos" action="../controllers/documentos/editDocumento.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <input class="form-control" type="hidden" name="id_new_documento" id="id_new_documento">
                     </div>
@@ -15,7 +15,10 @@
                         <input class="form-control" type="text" name="new_fecha_doc" id="new_fecha_doc" placeholder="Fecha" autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="new_ubicacion_doc" id="new_ubicacion_doc" placeholder="Ubicación" autocomplete="off">
+                        <input class="form-control" type="file" name="new_archivo" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="new_descripcion_doc" id="new_descripcion_doc" placeholder="Descripción" autocomplete="off">
                     </div>
                     <input class="btn btn-primary" type="submit" value="Guardar">
                 </form>

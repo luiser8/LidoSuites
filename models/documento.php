@@ -33,9 +33,14 @@ class Documento{
         return $this->documento;
     } 
 
-    public function editDocumento($id_documento, $fecha, $ubicacion){
-        $sql = "UPDATE documentos SET fecha='{$fecha}', ubicacion='{$ubicacion}'
+    public function editDocumento($id_documento, $fecha, $ubicacion, $descripcion){
+        if(!empty($ubicacion)){
+            $sql = "UPDATE documentos SET fecha='{$fecha}', ubicacion='{$ubicacion}', descripcion='{$descripcion}'
                   WHERE id_documento='{$id_documento}'";
+        }else{
+            $sql = "UPDATE documentos SET fecha='{$fecha}', descripcion='{$descripcion}'
+                  WHERE id_documento='{$id_documento}'";
+        }
         return $this->db->query($sql);
     }
     public function delDocumento($id_documento, $nombre){

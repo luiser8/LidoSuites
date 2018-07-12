@@ -1,0 +1,54 @@
+Tools
+
+Ms Office tools for vs
+Napa Office 356 dev tools
+Ms SharePoint Designer
+
+News features
+The apps for SharePoint model
+ - Sharepoint online Azure
+ - Sharepoint local On-promise deployments
+
+New cliet side
+- javascript	.net
+- silverlight/Mobile
+REST/OData
+
+ - web parts => base de datos
+
+ - timer jobs
+	tareas rango de tiempo para ejecutar tareas
+	deploy granjas
+
+ - Event receivers Captadores de eventos
+	seguimiento de tareas a lo que haga algun usuario o auditoria
+
+ - Workflows - flujos de trabajo
+	Automatizar procesos de trabajo
+
+
+"Todo en Sharepoint es una caracteristica"
+- Anatomy of a Feature
+- Feature deployment
+	. WFE
+
+Farm solution
+
+* Apps for Sharepoint
+Distribution
+	- publish t oapp Catalog
+	- publish to office Marketplace
+Encapsulation
+	- No server side code
+	- All Sharepoint artifacts hosted within app web
+Development models
+	- Sharepoint-hosted
+	- Remote-hosted
+Interaction
+	- full page
+	- app part
+	- command extensions
+
+Working
+-spFarm
+-spservice => importante los servicios

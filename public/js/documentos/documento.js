@@ -10,14 +10,15 @@ function editDocumento(index) {
     $('#editDocumento').modal('toggle');
 
     //Nodos tabla
-    var id_alicuota = index.parentNode.parentNode.cells[0].textContent;
-    var new_alicuota = index.parentNode.parentNode.cells[1].textContent;
-    var new_monto = index.parentNode.parentNode.cells[2].textContent;
+    var id_new_documento = index.parentNode.parentNode.cells[0].textContent;
+    var new_fecha_doc = index.parentNode.parentNode.cells[1].textContent;
+    var new_descripcion_doc = index.parentNode.parentNode.cells[2].textContent;
+    //var new_descripcion_doc = index.parentNode.parentNode.cells[3].textContent;
 
     //Pego en el formulario
-    document.getElementById('id_alicuota').value = id_alicuota;
-    document.getElementById('new_alicuota').value = new_alicuota;
-    document.getElementById('new_monto').value = new_monto;
+    document.getElementById('id_new_documento').value = id_new_documento;
+    document.getElementById('new_fecha_doc').value = new_fecha_doc;
+    document.getElementById('new_descripcion_doc').value = new_descripcion_doc;
 }
 
 //Elimina el registro
