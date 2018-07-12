@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 26, 2018 at 05:40 AM
+-- Generation Time: Jul 12, 2018 at 02:09 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.1.18
 
@@ -40,10 +40,10 @@ CREATE TABLE `alicuotas` (
 --
 
 INSERT INTO `alicuotas` (`id_alicuota`, `alicuota`, `monto`, `created`) VALUES
-(1, '2%', '2', '2018-06-26 02:52:06'),
-(2, '3%', '3', '2018-06-26 02:52:09'),
-(3, '4%', '4', '2018-06-26 02:52:12'),
-(4, '5%', '5', '2018-06-26 02:59:31');
+(1, '2%', '2', '2018-06-26 06:52:06'),
+(2, '3%', '3', '2018-06-26 06:52:09'),
+(3, '4%', '4', '2018-06-26 06:52:12'),
+(4, '5%', '5', '2018-06-26 06:59:31');
 
 -- --------------------------------------------------------
 
@@ -65,11 +65,11 @@ CREATE TABLE `apartamentos` (
 --
 
 INSERT INTO `apartamentos` (`id_apartamento`, `id_alicuota`, `nombre`, `saldo`, `estado`, `created`) VALUES
-(1, 1, 'Apartamento Nro 1', '100.00', 1, '2018-06-26 02:52:33'),
-(2, 1, 'Apartamento Nro 2', '100.00', 1, '2018-06-26 02:52:48'),
-(3, 2, 'Apartamento Nro 3', '100.00', 0, '2018-06-26 02:53:04'),
-(4, 3, 'Apartamento Nro 4', '100.00', 0, '2018-06-26 02:53:15'),
-(5, 4, 'Apartamento Nro 5', '100.00', 0, '2018-06-26 02:59:51');
+(1, 1, 'Apartamento Nro 1', '100.00', 1, '2018-06-26 06:52:33'),
+(2, 1, 'Apartamento Nro 2', '100.00', 1, '2018-06-26 06:52:48'),
+(3, 2, 'Apartamento Nro 3', '100.00', 0, '2018-06-26 06:53:04'),
+(4, 3, 'Apartamento Nro 4', '100.00', 0, '2018-06-26 06:53:15'),
+(5, 4, 'Apartamento Nro 5', '100.00', 0, '2018-06-26 06:59:51');
 
 -- --------------------------------------------------------
 
@@ -90,43 +90,13 @@ CREATE TABLE `auditorias` (
 --
 
 INSERT INTO `auditorias` (`id_auditoria`, `id_usuario`, `evento`, `tabla`, `created`) VALUES
-(1, 1, 'Agregar una alicuota', 'alicuotas', '2018-06-26 02:52:06'),
-(2, 1, 'Agregar una alicuota', 'alicuotas', '2018-06-26 02:52:09'),
-(3, 1, 'Agregar una alicuota', 'alicuotas', '2018-06-26 02:52:12'),
-(4, 1, 'Agregar un apartamento', 'apartamentos', '2018-06-26 02:52:33'),
-(5, 1, 'Agregar un apartamento', 'apartamentos', '2018-06-26 02:52:48'),
-(6, 1, 'Agregar un apartamento', 'apartamentos', '2018-06-26 02:53:04'),
-(7, 1, 'Agregar un apartamento', 'apartamentos', '2018-06-26 02:53:16'),
-(8, 1, 'Agregar un banco', 'bancos', '2018-06-26 02:53:30'),
-(9, 1, 'Agregar un banco', 'bancos', '2018-06-26 02:53:37'),
-(10, 1, 'Agregar un banco', 'bancos', '2018-06-26 02:53:44'),
-(11, 1, 'Agregar un banco', 'bancos', '2018-06-26 02:53:49'),
-(12, 1, 'Agregar un banco', 'bancos', '2018-06-26 02:54:00'),
-(13, 1, 'Agregar un banco', 'bancos', '2018-06-26 02:54:08'),
-(14, 1, 'Agregar un banco', 'bancos', '2018-06-26 02:54:18'),
-(15, 1, 'Agregar un banco', 'bancos', '2018-06-26 02:54:24'),
-(16, 1, 'Agregar un banco', 'bancos', '2018-06-26 02:54:32'),
-(17, 1, 'Agregar un banco', 'bancos', '2018-06-26 02:54:41'),
-(18, 1, 'Agregar un banco', 'bancos', '2018-06-26 02:54:47'),
-(19, 1, 'Agregar un banco', 'bancos', '2018-06-26 02:55:06'),
-(20, 1, 'Agregar un propietario', 'propietarios', '2018-06-26 02:56:16'),
-(21, 1, 'Agregar un propietario', 'propietarios', '2018-06-26 02:56:55'),
-(22, 1, 'Agregar una forma de pago', 'formas_pagos', '2018-06-26 02:57:55'),
-(23, 1, 'Agregar una forma de pago', 'formas_pagos', '2018-06-26 02:58:02'),
-(24, 1, 'Agregar una forma de pago', 'formas_pagos', '2018-06-26 02:58:10'),
-(25, 1, 'Agregar una forma de pago', 'formas_pagos', '2018-06-26 02:58:17'),
-(26, 1, 'Agregar una forma de pago', 'formas_pagos', '2018-06-26 02:58:24'),
-(27, 1, 'Agregar una forma de pago', 'formas_pagos', '2018-06-26 02:58:29'),
-(28, 1, 'Editar un banco', 'bancos', '2018-06-26 02:59:17'),
-(29, 1, 'Agregar una alicuota', 'alicuotas', '2018-06-26 02:59:31'),
-(30, 1, 'Agregar un apartamento', 'apartamentos', '2018-06-26 02:59:51'),
-(31, 1, 'Editar un banco', 'bancos', '2018-06-26 03:01:01'),
-(32, 1, 'Agregar una unidad tribut', 'ut', '2018-06-26 03:02:18'),
-(33, 2, 'Agregar un contrato', 'contrato', '2018-06-26 03:04:53'),
-(34, 2, 'Agregar un contrato', 'contrato', '2018-06-26 03:10:11'),
-(35, 2, 'Agregar un contrato', 'contrato', '2018-06-26 03:10:51'),
-(36, 2, 'Agregar un contrato', 'contrato', '2018-06-26 03:35:26'),
-(37, 2, 'Agregar un contrato', 'contrato', '2018-06-26 03:36:16');
+(1, 2, 'Agregar un gasto', 'gastos', '2018-07-10 19:00:21'),
+(2, 2, 'Agregar una mensualidad', 'mensualidad', '2018-07-10 19:00:39'),
+(3, 2, 'Agregar una cuenta por co', 'cxc', '2018-07-10 19:00:42'),
+(4, 2, 'Agregar una cuenta por co', 'cxc', '2018-07-10 19:00:42'),
+(5, 2, 'Agregar una cuenta por co', 'cxc', '2018-07-10 19:00:43'),
+(6, 2, 'Agregar una cuenta por co', 'cxc', '2018-07-10 19:00:43'),
+(7, 2, 'Agregar una cuenta por co', 'cxc', '2018-07-10 19:00:43');
 
 -- --------------------------------------------------------
 
@@ -145,18 +115,18 @@ CREATE TABLE `bancos` (
 --
 
 INSERT INTO `bancos` (`id_banco`, `descripcion`, `created`) VALUES
-(1, 'Banesco', '2018-06-26 02:53:30'),
-(2, 'Mercantil', '2018-06-26 02:53:37'),
-(3, 'BBVA Provincial', '2018-06-26 02:53:44'),
-(4, 'BOD', '2018-06-26 02:53:49'),
-(5, 'Banco de Venezuela', '2018-06-26 02:54:00'),
-(6, 'Banco Bicentenario', '2018-06-26 02:54:08'),
-(7, 'Banco Exterior', '2018-06-26 02:54:18'),
-(8, 'Sofitasa', '2018-06-26 02:54:23'),
-(9, '100% Banco', '2018-06-26 02:54:32'),
-(10, 'Banco Activo', '2018-06-26 02:54:40'),
-(11, 'Banco del Sur', '2018-06-26 02:54:47'),
-(12, 'Fondo Comun', '2018-06-26 02:55:06');
+(1, 'Banesco', '2018-06-26 06:53:30'),
+(2, 'Mercantil', '2018-06-26 06:53:37'),
+(3, 'BBVA Provincial', '2018-06-26 06:53:44'),
+(4, 'BOD', '2018-06-26 06:53:49'),
+(5, 'Banco de Venezuela', '2018-06-26 06:54:00'),
+(6, 'Banco Bicentenario', '2018-06-26 06:54:08'),
+(7, 'Banco Exterior', '2018-06-26 06:54:18'),
+(8, 'Sofitasa', '2018-06-26 06:54:23'),
+(9, '100% Banco', '2018-06-26 06:54:32'),
+(10, 'Banco Activo', '2018-06-26 06:54:40'),
+(11, 'Banco del Sur', '2018-06-26 06:54:47'),
+(12, 'Fondo Comun', '2018-06-26 06:55:06');
 
 -- --------------------------------------------------------
 
@@ -178,8 +148,8 @@ CREATE TABLE `contrato` (
 --
 
 INSERT INTO `contrato` (`id_contrato`, `id_apartamento`, `id_propietario`, `fecha_inicio`, `fecha_fin`, `created`) VALUES
-(1, 1, 5, '2018-06-01', '2018-06-30', '2018-06-26 03:10:51'),
-(3, 2, 6, '2018-06-04', '2018-06-30', '2018-06-26 03:36:16');
+(1, 1, 5, '2018-06-01', '2018-06-30', '2018-06-26 07:10:51'),
+(3, 2, 6, '2018-06-04', '2018-06-30', '2018-06-26 07:36:16');
 
 -- --------------------------------------------------------
 
@@ -197,6 +167,17 @@ CREATE TABLE `cxc` (
   `fecha` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Dumping data for table `cxc`
+--
+
+INSERT INTO `cxc` (`id_cxc`, `id_apartamento`, `id_alicuota`, `id_mensualidad`, `monto`, `cancelado`, `fecha`, `created`) VALUES
+(1, 1, 1, 1, '61200000.00', 0, '2018-07-10', '2018-07-10 19:00:42'),
+(2, 2, 1, 1, '61200000.00', 0, '2018-07-10', '2018-07-10 19:00:42'),
+(3, 3, 2, 1, '61800000.00', 0, '2018-07-10', '2018-07-10 19:00:43'),
+(4, 4, 3, 1, '62400000.00', 0, '2018-07-10', '2018-07-10 19:00:43'),
+(5, 5, 4, 1, '63000000.00', 0, '2018-07-10', '2018-07-10 19:00:43');
 
 -- --------------------------------------------------------
 
@@ -244,6 +225,13 @@ CREATE TABLE `detalle_mensualidad` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Dumping data for table `detalle_mensualidad`
+--
+
+INSERT INTO `detalle_mensualidad` (`id_detalle_mensualidad`, `id_mensualidad`, `id_gasto`, `cantidad`, `fecha`, `created`) VALUES
+(1, 1, 1, '10', '2018-07-10', '2018-07-10 19:00:39');
+
 -- --------------------------------------------------------
 
 --
@@ -274,12 +262,12 @@ CREATE TABLE `formas_pagos` (
 --
 
 INSERT INTO `formas_pagos` (`id_forma_pago`, `descripcion`, `created`) VALUES
-(1, 'Debito', '2018-06-26 02:57:55'),
-(2, 'Deposito', '2018-06-26 02:58:02'),
-(3, 'Transferencia', '2018-06-26 02:58:10'),
-(4, 'Cheque', '2018-06-26 02:58:17'),
-(5, 'Pago movil', '2018-06-26 02:58:24'),
-(6, 'Efectivo', '2018-06-26 02:58:29');
+(1, 'Debito', '2018-06-26 06:57:55'),
+(2, 'Deposito', '2018-06-26 06:58:02'),
+(3, 'Transferencia', '2018-06-26 06:58:10'),
+(4, 'Cheque', '2018-06-26 06:58:17'),
+(5, 'Pago movil', '2018-06-26 06:58:24'),
+(6, 'Efectivo', '2018-06-26 06:58:29');
 
 -- --------------------------------------------------------
 
@@ -288,18 +276,21 @@ INSERT INTO `formas_pagos` (`id_forma_pago`, `descripcion`, `created`) VALUES
 --
 
 CREATE TABLE `gastos` (
-  `id_gasto` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `id_ut` int(10) unsigned DEFAULT NULL,
+  `id_gasto` int(10) UNSIGNED NOT NULL,
+  `id_ut` int(10) UNSIGNED NOT NULL,
   `descripcion` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `monto` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
   `tipo` tinyint(4) DEFAULT '0',
-  `numeroUts` int(11) unsigned DEFAULT NULL,
-  `created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id_gasto`),
-  KEY `id_ut` (`id_ut`),
-  CONSTRAINT `gastos_ibfk_1` FOREIGN KEY (`id_ut`) REFERENCES `ut` (`id_ut`) ON DELETE CASCADE ON UPDATE CASCADE
+  `numeroUts` int(11) DEFAULT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Dumping data for table `gastos`
+--
+
+INSERT INTO `gastos` (`id_gasto`, `id_ut`, `descripcion`, `monto`, `tipo`, `numeroUts`, `created`) VALUES
+(1, 1, 'Bolsas', '6000000.00', 2, 5, '2018-07-10 19:00:21');
 
 -- --------------------------------------------------------
 
@@ -315,6 +306,13 @@ CREATE TABLE `mensualidad` (
   `tipo` tinyint(4) DEFAULT '0',
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Dumping data for table `mensualidad`
+--
+
+INSERT INTO `mensualidad` (`id_mensualidad`, `descripcion`, `total`, `fecha`, `tipo`, `created`) VALUES
+(1, 'Julio', '60000000.00', '2018-07-10', 1, '2018-07-10 19:00:39');
 
 -- --------------------------------------------------------
 
@@ -334,9 +332,9 @@ CREATE TABLE `niveles` (
 --
 
 INSERT INTO `niveles` (`id_nivel`, `nivel`, `descripcion`, `created`) VALUES
-(1, 'Administrador del sistema', 'Administrador del sistema', '2018-06-26 02:49:16'),
-(2, 'Administrador condiminio', 'Administrador condiminio', '2018-06-26 02:50:19'),
-(3, 'Propietario', 'Propietario', '2018-06-26 02:50:29');
+(1, 'Administrador del sistema', 'Administrador del sistema', '2018-06-26 06:49:16'),
+(2, 'Administrador condiminio', 'Administrador condiminio', '2018-06-26 06:50:19'),
+(3, 'Propietario', 'Propietario', '2018-06-26 06:50:29');
 
 -- --------------------------------------------------------
 
@@ -393,8 +391,8 @@ CREATE TABLE `propietarios` (
 --
 
 INSERT INTO `propietarios` (`id_propietario`, `cedula`, `nombres`, `apellidos`, `telefono`, `correo`, `notas`, `created`) VALUES
-(1, '8554452', 'Karla', 'Mejias', '4545551', 'karlam@outlook.com', 'Propietario Karla', '2018-06-26 02:56:16'),
-(2, '21212221', 'Carlos', 'Gutierrez', '455421221', 'carlosg@gmail.com', 'Propietario Carlos', '2018-06-26 02:56:55');
+(1, '8554452', 'Karla', 'Mejias', '4545551', 'karlam@outlook.com', 'Propietario Karla', '2018-06-26 06:56:16'),
+(2, '21212221', 'Carlos', 'Gutierrez', '455421221', 'carlosg@gmail.com', 'Propietario Carlos', '2018-06-26 06:56:55');
 
 -- --------------------------------------------------------
 
@@ -434,10 +432,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `id_nivel`, `nombres`, `apellidos`, `correo`, `contrasena`, `telefono`, `created`) VALUES
-(1, 1, 'Luis', 'Rondon', 'leduardo.rondon@gmail.com', '202cb962ac59075b964b07152d234b70', '04121805865', '2018-06-26 03:26:18'),
-(2, 2, 'Ronald', 'Rodriguez', 'ronaldr@gmail.com', '202cb962ac59075b964b07152d234b70', '04141881071', '2018-06-26 03:27:14'),
-(5, 3, 'Karla', 'Mejias', 'karlam@outlook.com', '202cb962ac59075b964b07152d234b70', '4545551', '2018-06-26 02:56:16'),
-(6, 3, 'Carlos', 'Gutierrez', 'carlosg@gmail.com', '202cb962ac59075b964b07152d234b70', '455421221', '2018-06-26 02:56:55');
+(1, 1, 'Luis', 'Rondon', 'leduardo.rondon@gmail.com', '202cb962ac59075b964b07152d234b70', '04121805865', '2018-06-26 07:26:18'),
+(2, 2, 'Ronald', 'Rodriguez', 'ronaldr@gmail.com', '202cb962ac59075b964b07152d234b70', '04141881071', '2018-06-26 07:27:14'),
+(5, 3, 'Karla', 'Mejias', 'karlam@outlook.com', '202cb962ac59075b964b07152d234b70', '4545551', '2018-06-26 06:56:16'),
+(6, 3, 'Carlos', 'Gutierrez', 'carlosg@gmail.com', '202cb962ac59075b964b07152d234b70', '455421221', '2018-06-26 06:56:55');
 
 -- --------------------------------------------------------
 
@@ -457,7 +455,7 @@ CREATE TABLE `ut` (
 --
 
 INSERT INTO `ut` (`id_ut`, `ut`, `anio`, `created`) VALUES
-(1, '1200000', 2018, '2018-06-26 03:02:18');
+(1, '1200000', 2018, '2018-06-26 07:02:18');
 
 --
 -- Indexes for dumped tables
@@ -615,7 +613,7 @@ ALTER TABLE `apartamentos`
 -- AUTO_INCREMENT for table `auditorias`
 --
 ALTER TABLE `auditorias`
-  MODIFY `id_auditoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_auditoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `bancos`
@@ -633,7 +631,7 @@ ALTER TABLE `contrato`
 -- AUTO_INCREMENT for table `cxc`
 --
 ALTER TABLE `cxc`
-  MODIFY `id_cxc` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cxc` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `cxc_has_pago`
@@ -651,7 +649,7 @@ ALTER TABLE `detalle`
 -- AUTO_INCREMENT for table `detalle_mensualidad`
 --
 ALTER TABLE `detalle_mensualidad`
-  MODIFY `id_detalle_mensualidad` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detalle_mensualidad` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `documentos`
@@ -669,13 +667,13 @@ ALTER TABLE `formas_pagos`
 -- AUTO_INCREMENT for table `gastos`
 --
 ALTER TABLE `gastos`
-  MODIFY `id_gasto` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_gasto` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mensualidad`
 --
 ALTER TABLE `mensualidad`
-  MODIFY `id_mensualidad` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mensualidad` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `niveles`

@@ -28,8 +28,10 @@
 		    			<td><?php echo $rs['nombre_completo']; ?></td>
 		    			<td><?php echo $rs['descripcion']; ?></td>
 		    			<td>
+		    				<?php if($_SESSION['idusuario'] == $rs['id_usuario']){ ?>
 		    				<a href="#" onclick="editNovedad(this);" ><i class="glyphicon glyphicon-edit"></i></a>
 		    				<a href="#" onclick="delNovedad(this);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    				<?php } ?>
 		    			</td>
 		    		</tr> <?php } ?>
 		    	</table>
