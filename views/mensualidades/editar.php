@@ -56,4 +56,3 @@
         <a class="btn btn-primary" href="?mensualidad">Volver</a>
     </div>
 </div>
-<?php var_dump($rsEditar); ?>
