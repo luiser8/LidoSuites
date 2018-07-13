@@ -1,4 +1,4 @@
-
+<?php require_once '../models/mensualidad.php'; ?>
 <ul class="nav nav-tabs nav-justified">
 		  <!-- Nav tabs -->
 		  <ul class="nav nav-tabs" role="tablist">
@@ -22,7 +22,12 @@
 					</div>
 				<?php }else if($_GET['mensualidad'] == 'editar'){ ?>
 					<div class="col-md-12">
-					<?php require_once '../views/mensualidades/editar.php'; ?>
+					<?php
+					    $id = isset($_GET['id']) ? $_GET['id'] : '';
+					    $instancia = new Mensualidad();
+					    $mensualidadEditar = $instancia->getMensualidadIdEditar($id);
+					    require_once '../views/mensualidades/editar.php'; 
+					?>
 					</div>
 				<?php }else{?>
 	    		<table class="table table-striped" id="tablaMensualidad">

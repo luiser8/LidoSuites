@@ -58,6 +58,19 @@ class Mensualidad{
         return $this->mensualidad;
     } 
 
+    public function getMensualidadIdEditar($id_mensualidad){
+        $sql = $this->db->query("SELECT mensualidad.*, detalle_mensualidad.*, gastos.*
+                                            FROM mensualidad
+                                                INNER JOIN detalle_mensualidad on mensualidad.id_mensualidad = detalle_mensualidad.id_mensualidad
+                                                INNER JOIN gastos on detalle_mensualidad.id_gasto = gastos.id_gasto
+                                                WHERE mensualidad.id_mensualidad ='{$id_mensualidad}'
+                                                AND mensualidad.tipo = 0");
+        while($filas = $sql->fetch_assoc()){
+            $this->mensualidad[] = $filas;
+        }
+        return $this->mensualidad;
+    } 
+    
     public function editMensualidad($id_mensualidad ,$descripcion){
         $sql = "UPDATE mensualidad SET descripcion='{$descripcion}'
                   WHERE id_mensualidad='{$id_mensualidad}'";

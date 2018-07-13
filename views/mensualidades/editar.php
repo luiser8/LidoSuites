@@ -17,6 +17,7 @@
         <div class="pull-right">
             <button type="button" class="btn btn-primary" data-target=".bs-example-modal-lg" onclick="selectGasto();">Agregar gastos</button>
         </div>
+        <?php for($i=0; $i<count($mensualidadEditar); $i++){ $rsEditar = $mensualidadEditar[$i];} ?>
         <table class="table table-bordered" id="tabla">        
             <thead>
                 <tr>
@@ -55,3 +56,4 @@
         <a class="btn btn-primary" href="?mensualidad">Volver</a>
     </div>
 </div>
+<?php var_dump($rsEditar); ?>
