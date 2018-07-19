@@ -28,9 +28,10 @@ class Propietario{
     }
 
     public function getPropietariosContrato(){
-        $sql = $this->db->query("SELECT propietarios.*, contrato.id_propietario AS contrato
-                                        FROM propietarios
-                                    INNER JOIN contrato ON propietarios.id_propietario = contrato.id_propietario");
+        $sql = $this->db->query("SELECT usuarios.*, contrato.id_propietario AS contrato
+                                        FROM usuarios
+                                    INNER JOIN contrato ON usuarios.id_usuario = contrato.id_propietario
+                                    WHERE usuarios.id_nivel = 3");
         while($filas = $sql->fetch_assoc()){
             $this->propietario[] = $filas;
         }
@@ -51,6 +52,13 @@ class Propietario{
                   WHERE id_propietario='{$id_propietario}'";
         return $this->db->query($sql);
     }
+    
+    public function contratoPropietario($cedula){
+        $sql = "UPDATE propietarios SET contrato='1'
+                  WHERE cedula='{$cedula}'";
+        return $this->db->query($sql);
+    }
+    
     public function delPropietario($id_propietario){
         $sql = "DELETE FROM propietarios WHERE id_propietario='{$id_propietario}'";
         return $this->db->query($sql);

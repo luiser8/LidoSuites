@@ -17,22 +17,22 @@
 			    	
 	    		<table class="table table-striped" id="tablaGastos">
 		    		<tr>
-							<th>Id</th>
+						<th>Id</th>
 		    			<th>Descripción</th>
 		    			<th>Monto</th>
 		    			<th>Tipo</th>
-							<th>Número de Ut</th>
-							<th style='display:none;'>Id_Ut</th>
+						<th>Número de Ut</th>
+						<th style='display:none;'>Id_Ut</th>
 		    			<th>Opciones</th>
 		    		</tr>
 		    		<?php for($i=0; $i<count($gastos); $i++){ $rs = $gastos[$i]; ?>
 		    		<tr>
 		    			<td><?php echo $rs['id_gasto']; ?></td>
-							<td><?php echo $rs['descripcion']; ?></td>
-		    			<td><?php echo $rs['monto']; ?></td>
+						<td><?php echo $rs['descripcion']; ?></td>
+		    			<td><?php echo number_format($rs['monto'], 2, ',', '.'); ?></td>
 		    			<td><?php echo $rs['tipo']; ?></td>
-							<td><?php echo $rs['numeroUts']; ?></td>
-							<td style='display:none;'><?php echo $rs['id_ut']; ?></td>
+						<td><?php echo $rs['numeroUts']; ?></td>
+						<td style='display:none;'><?php echo $rs['id_ut']; ?></td>
 		    			<td>
 		    				<a href="#" onclick="editGasto(this);" ><i class="glyphicon glyphicon-edit"></i></a>
 		    				<a href="#" onclick="delGasto(this);" ><i class="glyphicon glyphicon-trash"></i></a>

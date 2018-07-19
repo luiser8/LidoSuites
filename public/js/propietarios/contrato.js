@@ -32,6 +32,7 @@ function validarContrato(){
 function creaContrato(){
     var data = {
         'id_propietario' : $('#id_propietario').val(),
+        'cedula' : $('#cedula').val(),
         'Apto' : Apto,
         'fechaInicio' : $('#fechaInicio').val(),
         'fechaFin' : $('#fechaFin').val()

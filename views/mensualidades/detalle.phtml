@@ -43,7 +43,7 @@
 		    		<tr>
 		    			<td><?php echo $rs['id_mensualidad']; ?></td>
 		    			<td><?php echo $rs['descripcion']; ?></td>
-		    			<td><?php echo $rs['total']; ?></td>
+		    			<td><?php echo number_format($rs['total'], 2, ',', '.'); ?></td>
 		    			<td><?php echo $rs['fecha']; ?></td>
 		    			<!-- <td><?php //echo $rs['tipo']; ?></td> -->
 		    			<td>

@@ -6,6 +6,7 @@
         
             <input class="form-control" type="date" id="fechaFin">
             <input type="hidden" id="id_propietario" value="<?php echo $_GET['id']; ?>"/>
+            <input type="hidden" id="cedula" value="<?php echo $_GET['ci']; ?>"/>
     </address>
 </div>
 <div class="container">

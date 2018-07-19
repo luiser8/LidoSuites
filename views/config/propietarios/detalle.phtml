@@ -42,7 +42,9 @@
 		    			<td><?php echo $rs['notas']; ?></td>
 		    			<td>
 		    				<a href="#" onclick="editPropietario(this);" title="Editar propietario"><i class="glyphicon glyphicon-edit"></i></a>
-		    				<a href="?propietarios=contrato&id=<?php echo $rs['id_usuario']; ?>" title="Generar contrato"><i class="glyphicon glyphicon-pencil"></i></a>
+		    				<?php if($rs['contrato'] == 0){ ?>
+		    					<a href="?propietarios=contrato&id=<?php echo $rs['id_usuario']; ?>&ci=<?php echo $rs['cedula']; ?>" title="Generar contrato"><i class="glyphicon glyphicon-pencil"></i></a>
+		    				<?php } ?>
 		    				<a href="#" onclick="delPropietario(this);" title="Eliminar propietario"><i class="glyphicon glyphicon-trash"></i></a>
 		    			</td>
 		    		</tr> <?php } ?>
