@@ -15,5 +15,4 @@ if(!empty($_POST)){
 	$gasto->addGasto($id_ut, $descripcion, $monto, $tipo, $numeroUts);
 	$auditoria->addAuditoria($_SESSION['idusuario'], 'Agregar un gasto', 'gastos');
 	header('Location: ../../pages/?gastos');
-
 }
